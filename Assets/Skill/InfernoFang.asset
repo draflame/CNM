@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf01f5e2bb3546438847ea5e902e2a7, type: 3}
+  m_Name: InfernoFang
+  m_EditorClassIdentifier: 
+  itemName: "H\u1ECFa Nanh \u0110\u1ECBa Ng\u1EE5c"
+  icon: {fileID: 4907341863904058824, guid: ad11c6098f151da4aab41abe5c5320da, type: 3}
+  skillSet: {fileID: 11400000, guid: d8b47d636f173894c8a0510ce9159b19, type: 2}
+  description: "R\u0103ng nanh k\u1EBFt tinh t\u1EEB l\xF5i dung nham, lu\xF4n t\u1ECFa
+    ra h\u01A1i n\xF3ng \u0111\u1ECF r\u1EF1c nh\u01B0 s\u1EAFp b\xF9ng ch\xE1y"
+  itemType: 0

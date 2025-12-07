@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf01f5e2bb3546438847ea5e902e2a7, type: 3}
+  m_Name: HeavySword
+  m_EditorClassIdentifier: 
+  itemName: "C\u1EF1 Ki\u1EBFm"
+  icon: {fileID: 5828267347050334307, guid: d6572830617af6c498e991d231749205, type: 3}
+  skillSet: {fileID: 11400000, guid: b80b958323f151f438201515644e96f5, type: 2}
+  description: "M\u1ED9t thanh \u0111\u1EA1i ki\u1EBFm r\xE8n t\u1EEB th\xE9p \u0111en,
+    n\u1EB7ng \u0111\u1EBFn m\u1EE9c ch\u1EC9 nh\u1EEFng chi\u1EBFn binh l\xE3o luy\u1EC7n
+    m\u1EDBi c\xF3 th\u1EC3 vung n\u1ED5i"
+  itemType: 0

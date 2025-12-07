@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c382db037439d46945f08580eff4d1, type: 3}
+  m_Name: Tornado Slash
+  m_EditorClassIdentifier: 
+  skillName: Tornado Slash
+  manaCost: 70
+  cooldown: 10
+  skillIcon: {fileID: -6150819752361926445, guid: 64f818573f8eb2e40a6cf28049bf0eef, type: 3}
+  tornadoPrefab: {fileID: 49331644344483373, guid: 07d03a0d05cc8324584d32e9946fc571, type: 3}
+  speed: 5
+  duration: 3

@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: fc773adb16a6d9441939233a230a5f2e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 599380860823889816
+    second: Treasure Chest - Basic & Fancy_0
+  - first:
+      213: 8316584050811242800
+    second: Treasure Chest - Basic & Fancy_1
+  - first:
+      213: -7416816672502468512
+    second: Treasure Chest - Basic & Fancy_2
+  - first:
+      213: 6525407810583207484
+    second: Treasure Chest - Basic & Fancy_3
+  - first:
+      213: 5723877627616111910
+    second: Treasure Chest - Basic & Fancy_4
+  - first:
+      213: -6212500560023011318
+    second: Treasure Chest - Basic & Fancy_5
+  - first:
+      213: 8082630354802112537
+    second: Treasure Chest - Basic & Fancy_6
+  - first:
+      213: -618166054341970985
+    second: Treasure Chest - Basic & Fancy_7
+  - first:
+      213: 3795372311135204093
+    second: Treasure Chest - Basic & Fancy_8
+  - first:
+      213: 8019158840938008172
+    second: Treasure Chest - Basic & Fancy_9
+  - first:
+      213: 2699384400377393767
+    second: Treasure Chest - Basic & Fancy_10
+  - first:
+      213: 3805267680429877810
+    second: Treasure Chest - Basic & Fancy_11
+  - first:
+      213: 407397433877217116
+    second: Treasure Chest - Basic & Fancy_12
+  - first:
+      213: 5622866548374851735
+    second: Treasure Chest - Basic & Fancy_13
+  - first:
+      213: -2149799693181306255
+    second: Treasure Chest - Basic & Fancy_14
+  - first:
+      213: -8337123426547044518
+    second: Treasure Chest - Basic & Fancy_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897639e97bd615800800000000000000
+      internalID: 599380860823889816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 25
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039884d81217a6370800000000000000
+      internalID: 8316584050811242800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 25
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 060bb47488c221990800000000000000
+      internalID: -7416816672502468512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 25
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e1f54a4d7ee8a50800000000000000
+      internalID: 6525407810583207484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 25
+        width: 31
+        height: 24
+      alignment: 9
+      pivot: {x: 0.4963802, y: 0.45792022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d2ddb306c4f6f40800000000000000
+      internalID: 5723877627616111910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_5
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a00c9e8e7a3c8c9a0800000000000000
+      internalID: -6212500560023011318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 25
+        width: 36
+        height: 23
+      alignment: 9
+      pivot: {x: 0.41584098, y: 0.475606}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 918f4cceb754b2070800000000000000
+      internalID: 8082630354802112537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_7
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 25
+        width: 36
+        height: 19
+      alignment: 9
+      pivot: {x: 0.43142572, y: 0.5649649}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d3fdbeaf35db67f0800000000000000
+      internalID: -618166054341970985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_8
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 25
+        width: 36
+        height: 15
+      alignment: 9
+      pivot: {x: 0.41272396, y: 0.7244245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df2319b120fdba430800000000000000
+      internalID: 3795372311135204093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e0b8f7a76c94f60800000000000000
+      internalID: 8019158840938008172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_10
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 762b9b86fc3267520800000000000000
+      internalID: 2699384400377393767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_11
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a2c4f4bc60fc430800000000000000
+      internalID: 3805267680429877810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_12
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f38a0cecd57a500800000000000000
+      internalID: 407397433877217116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 37
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7905f43a55f680e40800000000000000
+      internalID: 5622866548374851735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_14
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 37
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a3fa5b1906a22e0800000000000000
+      internalID: -2149799693181306255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure Chest - Basic & Fancy_15
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 36
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f63106a669c4c80800000000000000
+      internalID: -8337123426547044518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4ed405ac2546b9348861d2930a5e49f7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Treasure Chest - Basic & Fancy_0: 599380860823889816
+      Treasure Chest - Basic & Fancy_1: 8316584050811242800
+      Treasure Chest - Basic & Fancy_10: 2699384400377393767
+      Treasure Chest - Basic & Fancy_11: 3805267680429877810
+      Treasure Chest - Basic & Fancy_12: 407397433877217116
+      Treasure Chest - Basic & Fancy_13: 5622866548374851735
+      Treasure Chest - Basic & Fancy_14: -2149799693181306255
+      Treasure Chest - Basic & Fancy_15: -8337123426547044518
+      Treasure Chest - Basic & Fancy_2: -7416816672502468512
+      Treasure Chest - Basic & Fancy_3: 6525407810583207484
+      Treasure Chest - Basic & Fancy_4: 5723877627616111910
+      Treasure Chest - Basic & Fancy_5: -6212500560023011318
+      Treasure Chest - Basic & Fancy_6: 8082630354802112537
+      Treasure Chest - Basic & Fancy_7: -618166054341970985
+      Treasure Chest - Basic & Fancy_8: 3795372311135204093
+      Treasure Chest - Basic & Fancy_9: 8019158840938008172
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

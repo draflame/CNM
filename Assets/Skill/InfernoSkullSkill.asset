@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af271a4d8a5c154d9353bcf0cb2d386, type: 3}
+  m_Name: InfernoSkullSkill
+  m_EditorClassIdentifier: 
+  skillName: Inferno Skull
+  manaCost: 30
+  cooldown: 20
+  skillIcon: {fileID: 6680881367320573907, guid: 6829f38c5d044944c8a5f660b164c321, type: 3}
+  skullPrefab: {fileID: 8027764512948259872, guid: e2712cce4f084ea4c8f7c1c3ff00fcd4, type: 3}
+  skullCount: 3
+  spawnRadius: 1.5
