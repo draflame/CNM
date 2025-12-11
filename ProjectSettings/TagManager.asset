@@ -11,6 +11,7 @@ TagManager:
   - EyeBall
   - Item
   - Skill
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

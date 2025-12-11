@@ -15,6 +15,7 @@ MonoBehaviour:
   skillName: Tornado Slash
   manaCost: 70
   cooldown: 10
+  description: 
   skillIcon: {fileID: -6150819752361926445, guid: 64f818573f8eb2e40a6cf28049bf0eef, type: 3}
   tornadoPrefab: {fileID: 49331644344483373, guid: 07d03a0d05cc8324584d32e9946fc571, type: 3}
   speed: 5

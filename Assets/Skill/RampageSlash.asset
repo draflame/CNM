@@ -15,6 +15,7 @@ MonoBehaviour:
   skillName: Rampage Slash
   manaCost: 25
   cooldown: 3
+  description: 
   skillIcon: {fileID: -5437796642337818516, guid: b3c7449d287441149af513fee2ed745b, type: 3}
   rampageSlashPrefab: {fileID: 1563055490379212850, guid: c3b74e2f3e4746c4bb1a8d0e32cf712d, type: 3}
   destroyDelay: 1

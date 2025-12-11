@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: f799114e22c3e2047a85037b6cac1c69
   m_SerializeEntries:
+  - m_GUID: 7b53784a078e39c44bf83986c0fb5c23
+    m_Address: Assets/PreFabs/BringerCast.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: edbf3ec518ee71c43a103c34d6450e46
     m_Address: Assets/PreFabs/HeartPrefab.prefab
     m_ReadOnly: 0

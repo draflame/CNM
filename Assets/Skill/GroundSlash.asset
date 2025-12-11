@@ -15,5 +15,6 @@ MonoBehaviour:
   skillName: Ground Slash
   manaCost: 10
   cooldown: 2
+  description: 
   skillIcon: {fileID: -121767313496426054, guid: dd9f83e0bce32a2488fc310b56d1265d, type: 3}
   slashPrefab: {fileID: 6611767214465684034, guid: 6e7f58ccd53e22642b404a89a53c936c, type: 3}

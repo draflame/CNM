@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37fcca87133887143be33b5958586394, type: 3}
   m_Name: Heal Potion
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: "B\xECnh h\u1ED3i m\xE1u"
   icon: {fileID: -7978307058743780043, guid: 596fdf023e7233e48b51c4cd816eaa2d, type: 3}
   skillSet: {fileID: 0}
   description: 
