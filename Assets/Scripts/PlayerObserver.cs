@@ -8,11 +8,13 @@ public class PlayerObserver : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private bool enableObservation = true;
+    [SerializeField] private bool showDebugLogs = true;
     
     private knight playerScript;
     private Rigidbody2D rb;
     private Vector2 lastPosition;
     private float lastHealth;
+    private float nextScanTime = 0f;
     
     // Find all bosses with learning AI
     private BossLearningAI[] learningBosses;
@@ -22,25 +24,51 @@ public class PlayerObserver : MonoBehaviour
         playerScript = GetComponent<knight>();
         rb = GetComponent<Rigidbody2D>();
         
-        // Find all bosses that can learn
-        learningBosses = FindObjectsByType<BossLearningAI>(FindObjectsSortMode.None);
-        
-        if (learningBosses.Length > 0)
-        {
-            Debug.Log($"[Player Observer] Found {learningBosses.Length} learning bosses");
-        }
-        
         if (playerScript != null)
         {
             lastHealth = GetCurrentHealth();
         }
         
         lastPosition = transform.position;
+        
+        // Scan lần đầu
+        ScanForLearningBosses();
+        
+        if (showDebugLogs)
+            Debug.Log($"✅ [Player Observer] Initialized - Monitoring player actions for AI learning");
+    }
+    
+    private void ScanForLearningBosses()
+    {
+        // Find all bosses that can learn
+        learningBosses = FindObjectsByType<BossLearningAI>(FindObjectsSortMode.None);
+        
+        if (learningBosses.Length > 0)
+        {
+            if (showDebugLogs)
+                Debug.Log($"🔍 [Player Observer] Found {learningBosses.Length} learning boss(es)");
+        }
+        else
+        {
+            if (showDebugLogs)
+                Debug.LogWarning("⚠️ [Player Observer] No learning bosses found yet. Will retry...");
+        }
     }
     
     private void Update()
     {
         if (!enableObservation || playerScript == null) return;
+        
+        // Re-scan nếu chưa tìm thấy boss
+        if (learningBosses == null || learningBosses.Length == 0)
+        {
+            if (Time.time >= nextScanTime)
+            {
+                nextScanTime = Time.time + 2f; // Scan mỗi 2 giây
+                ScanForLearningBosses();
+            }
+            return;
+        }
         
         // Detect dodge by movement pattern
         DetectDodge();
@@ -54,17 +82,20 @@ public class PlayerObserver : MonoBehaviour
     /// </summary>
     private void DetectDodge()
     {
-        Vector2 currentPos = transform.position;
-        Vector2 movement = currentPos - lastPosition;
+        if (rb == null) return;
         
-        // Nếu di chuyển đột ngột trong 1 frame (dash/dodge)
-        if (movement.magnitude > 3f * Time.deltaTime)
+        Vector2 velocity = rb.linearVelocity;
+        
+        // Phát hiện dodge qua velocity spike (tốc độ đột ngột cao)
+        if (velocity.magnitude > 8f) // Threshold cho dash/dodge
         {
-            Vector2 dodgeDirection = movement.normalized;
+            Vector2 dodgeDirection = velocity.normalized;
+            
+            if (showDebugLogs)
+                Debug.Log($"🏃 [Player Observer] Dodge detected! Direction: {dodgeDirection}");
+            
             NotifyBosses_PlayerDodge(dodgeDirection);
         }
-        
-        lastPosition = currentPos;
     }
     
     /// <summary>
@@ -74,10 +105,14 @@ public class PlayerObserver : MonoBehaviour
     {
         float currentHealth = GetCurrentHealth();
         
-        // Health increased = healed
-        if (currentHealth > lastHealth + 1f)
+        // Health increased = healed (threshold 0.5 HP thay vì 1)
+        if (currentHealth > lastHealth + 0.5f)
         {
-            float healthPercent = GetHealthPercent();
+            float healthPercent = lastHealth / GetMaxHealth(); // % trước khi heal
+            
+            if (showDebugLogs)
+                Debug.Log($"💚 [Player Observer] Heal detected! HP before: {healthPercent * 100:F0}% (from {lastHealth} to {currentHealth})");
+            
             NotifyBosses_PlayerHeal(healthPercent);
         }
         
@@ -96,6 +131,9 @@ public class PlayerObserver : MonoBehaviour
     {
         if (!enableObservation) return;
         
+        if (showDebugLogs)
+            Debug.Log($"⚔️ [Player Observer] Skill used: {skillName}");
+        
         NotifyBosses_PlayerSkill(skillName);
     }
     
@@ -105,6 +143,9 @@ public class PlayerObserver : MonoBehaviour
     public void OnDodge(Vector2 direction)
     {
         if (!enableObservation) return;
+        
+        if (showDebugLogs)
+            Debug.Log($"🏃 [Player Observer] Dodge called: {direction}");
         
         NotifyBosses_PlayerDodge(direction);
     }
@@ -120,14 +161,13 @@ public class PlayerObserver : MonoBehaviour
     }
     
     /// <summary>
-    /// Gọi khi player heal
+    /// Gọi khi player heal (với healthPercent trước khi heal)
     /// </summary>
-    public void OnHeal()
+    public void OnHeal(float healthPercentBeforeHeal)
     {
         if (!enableObservation) return;
         
-        float healthPercent = GetHealthPercent();
-        NotifyBosses_PlayerHeal(healthPercent);
+        NotifyBosses_PlayerHeal(healthPercentBeforeHeal);
     }
     
     /// <summary>
@@ -194,15 +234,15 @@ public class PlayerObserver : MonoBehaviour
     
     private float GetCurrentHealth()
     {
-        // TODO: Get actual player health
-        // playerScript.health hoặc playerScript.GetCurrentHealth()
+        if (playerScript != null)
+            return playerScript.GetCurrentHealth();
         return 100f;
     }
     
-    private float GetHealthPercent()
+    private float GetMaxHealth()
     {
-        // TODO: Get actual player health percent
-        // playerScript.GetHealthPercent()
-        return 1f;
+        if (playerScript != null)
+            return playerScript.GetMaxHealth();
+        return 100f;
     }
 }

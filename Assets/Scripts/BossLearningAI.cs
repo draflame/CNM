@@ -146,7 +146,7 @@ public class BossLearningAI : MonoBehaviour
         RecordAction(patternKey);
         
         if (showLearningDebug)
-            Debug.Log($"[Boss Learning] Player used: {skillName}");
+            Debug.Log($"📝 [Boss Learning] Player used: {skillName} → Pattern key: {patternKey} (Count: {GetPatternCount(patternKey)})");
     }
     
     /// <summary>
@@ -263,7 +263,8 @@ public class BossLearningAI : MonoBehaviour
         int maxUsage = 0;
         string mostUsed = "";
         
-        string[] skills = { "tornadoSlash", "heavySlash", "rampageSlash", "infernoSkill" };
+        // Chữ thường, không dấu cách (khớp với ToLower().Replace(" ", ""))
+        string[] skills = { "tornadoslash", "heavyslash", "rampageslash", "infernoskill" };
         
         foreach (string skill in skills)
         {
@@ -275,13 +276,16 @@ public class BossLearningAI : MonoBehaviour
             }
         }
         
+        if (showLearningDebug)
+            Debug.Log($"🔍 [Boss Analysis] Checking skill usage... Max: {maxUsage} ({mostUsed})");
+        
         if (maxUsage >= minObservationsToLearn)
         {
             mostUsedSkill = mostUsed;
             hasLearnedSkillSpam = true;
             
             // Counter strategies
-            if (mostUsed == "tornadoSlash")
+            if (mostUsed == "tornadoslash")
             {
                 // Tornado có range → Keep distance
                 currentDistance = 8f;
@@ -289,7 +293,7 @@ public class BossLearningAI : MonoBehaviour
                 if (showLearningDebug)
                     Debug.Log($"🧠 [Boss Learned] Player spams Tornado → KEEP DISTANCE!");
             }
-            else if (mostUsed == "heavySlash")
+            else if (mostUsed == "heavyslash")
             {
                 // Heavy attack chậm → Interrupt
                 currentAggressiveness = 1.4f;
@@ -297,7 +301,7 @@ public class BossLearningAI : MonoBehaviour
                 if (showLearningDebug)
                     Debug.Log($"🧠 [Boss Learned] Player uses Heavy → INTERRUPT!");
             }
-            else if (mostUsed == "rampageSlash")
+            else if (mostUsed == "rampageslash")
             {
                 // Rampage = close range → Use ranged
                 currentDistance = 6f;
