@@ -45,6 +45,9 @@ GameObject:
   - component: {fileID: 6296449199228555456}
   - component: {fileID: 7426744849909588330}
   - component: {fileID: 8409926174373398666}
+  - component: {fileID: 6867000035397004636}
+  - component: {fileID: 6575974477482162307}
+  - component: {fileID: 4707581193802056636}
   m_Layer: 9
   m_Name: Bringer Of Death
   m_TagString: Enemy
@@ -182,20 +185,10 @@ MonoBehaviour:
   spellRange: 8
   spellCooldown: 7
   spellHeightOffset: 1.2
-  spellPrefab:
-    m_AssetGUID: 7b53784a078e39c44bf83986c0fb5c23
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
+  spellPrefab: {fileID: 3618894719891368722, guid: 7b53784a078e39c44bf83986c0fb5c23, type: 3}
   deathClawRange: 2.5
   deathClawCooldown: 3
-  deathClawPrefab:
-    m_AssetGUID: f21df208d83d9174db8a8bfe07a666a0
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
+  deathClawPrefab: {fileID: 6094272382243351409, guid: f21df208d83d9174db8a8bfe07a666a0, type: 3}
   deathClawSpawnPoint: {fileID: 2931368546545593751}
   deathClawDuration: 1
 --- !u!61 &7426744849909588330
@@ -271,6 +264,56 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6867000035397004636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292578274106059951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b8a7695518d654c999af8d45b209b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAddAIComponents: 1
+  showDebugLogs: 1
+--- !u!114 &6575974477482162307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292578274106059951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84a64f161c7fec44abd5d6f41d5b5e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableLearning: 1
+  learningSpeed: 1
+  minObservationsToLearn: 3
+  showLearningDebug: 1
+  adaptationDelay: 2
+--- !u!114 &4707581193802056636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292578274106059951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905c197aa5cd6ab4e80d4bb8a7db6e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decisionInterval: 0.5
+  showDebugInfo: 1
+  lowHealthThreshold: 0.3
+  aggressiveHealthThreshold: 0.7
+  closeDistance: 3
+  mediumDistance: 6
+  farDistance: 10
 --- !u!1 &3661794878093630153
 GameObject:
   m_ObjectHideFlags: 0
