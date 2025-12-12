@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf01f5e2bb3546438847ea5e902e2a7, type: 3}
   m_Name: HeavySword
   m_EditorClassIdentifier: 
+  UniqueID: HEAVY_SWORD
   itemName: "C\u1EF1 Ki\u1EBFm"
   icon: {fileID: 5828267347050334307, guid: d6572830617af6c498e991d231749205, type: 3}
   skillSet: {fileID: 11400000, guid: b80b958323f151f438201515644e96f5, type: 2}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf01f5e2bb3546438847ea5e902e2a7, type: 3}
   m_Name: InfernoFang
   m_EditorClassIdentifier: 
+  UniqueID: INFERNO_FANG
   itemName: "H\u1ECFa Nanh \u0110\u1ECBa Ng\u1EE5c"
   icon: {fileID: 4907341863904058824, guid: ad11c6098f151da4aab41abe5c5320da, type: 3}
   skillSet: {fileID: 11400000, guid: d8b47d636f173894c8a0510ce9159b19, type: 2}
