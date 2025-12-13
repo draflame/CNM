@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e8b55cbfcae8f4f9690e0902087948, type: 3}
   m_Name: InfernoFangSet
   m_EditorClassIdentifier: 
+  UniqueID: SKILLSET_INFERNO_FANG
   skills:
   - {fileID: 11400000, guid: 12d36c3d299002d41b865ddf94514105, type: 2}
   - {fileID: 11400000, guid: 9eca480562b63d045b0b8520b3e81323, type: 2}

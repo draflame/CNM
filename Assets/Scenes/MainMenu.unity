@@ -674,6 +674,7 @@ MonoBehaviour:
   persistentSceneName: Persistent Scene
   audioSource: {fileID: 132956746}
   backgroundMusic: {fileID: 8300000, guid: 2c639afa851370e4daa667af27cf6128, type: 3}
+  countinueButton: {fileID: 772795099}
 --- !u!4 &359919548
 Transform:
   m_ObjectHideFlags: 0
@@ -862,7 +863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 432, y: -32}
+  m_AnchoredPosition: {x: 432, y: -166}
   m_SizeDelta: {x: 381.6294, y: 118.6517}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &590847445
@@ -995,7 +996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 432, y: -166}
+  m_AnchoredPosition: {x: 425, y: -34}
   m_SizeDelta: {x: 381.6294, y: 118.6517}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772795101
@@ -1044,7 +1045,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 359919547}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1313,7 +1314,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 359919547}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
