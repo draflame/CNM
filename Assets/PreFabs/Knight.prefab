@@ -575,9 +575,6 @@ MonoBehaviour:
   dashDuration: 0.3
   dashCooldown: 1
   dashEffectPrefab: {fileID: 7670788856989322814}
-  healthBar: {fileID: 0}
-  staminaBar: {fileID: 0}
-  healthText: {fileID: 0}
   stamina: 100
   staminaRegenDelay: 2
   staminaRegenRate: 5
