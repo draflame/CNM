@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Ground
+  - Wood
+  - Enemy
+  - Stair
+  - EyeBall
+  - Item
+  - Skill
+  - SpawnPoint
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Stair
+  - Player
+  - Enemy
+  - Item
+  - Skill
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 3460303275
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Wall
+    uniqueID: 3206407771
+    locked: 0
+  - name: Wall2
+    uniqueID: 2520293551
+    locked: 0
+  - name: Ground
+    uniqueID: 2251847315
+    locked: 0
+  - name: Stair
+    uniqueID: 523893677
+    locked: 0
+  - name: Bridge
+    uniqueID: 1761852833
+    locked: 0
+  - name: DashEffect
+    uniqueID: 1570041783
+    locked: 0
+  - name: Enemy
+    uniqueID: 1707544633
+    locked: 0
+  - name: Chest
+    uniqueID: 1151316305
+    locked: 0
+  - name: Player
+    uniqueID: 1415540899
+    locked: 0
+  - name: Skill
+    uniqueID: 662522579
+    locked: 0
+  - name: Item
+    uniqueID: 2112034271
+    locked: 0
+  - name: Wall3
+    uniqueID: 3976296215
+    locked: 0
+  - name: Roof
+    uniqueID: 2189381863
+    locked: 0
+  - name: HPFill
+    uniqueID: 200849971
+    locked: 0
+  - name: HP
+    uniqueID: 2529374523
+    locked: 0
+  m_RenderingLayers:
+  - Default

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da84170a978ceef41b30c21af8ea0122, type: 3}
+  m_Name: RampageSlash
+  m_EditorClassIdentifier: 
+  skillName: Rampage Slash
+  manaCost: 25
+  cooldown: 3
+  description: 
+  skillIcon: {fileID: -5437796642337818516, guid: b3c7449d287441149af513fee2ed745b, type: 3}
+  rampageSlashPrefab: {fileID: 1563055490379212850, guid: c3b74e2f3e4746c4bb1a8d0e32cf712d, type: 3}
+  destroyDelay: 1
