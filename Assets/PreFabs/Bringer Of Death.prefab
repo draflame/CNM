@@ -92,6 +92,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -113,6 +115,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1707544633
   m_SortingLayer: 7
   m_SortingOrder: 0
@@ -191,6 +194,10 @@ MonoBehaviour:
   deathClawPrefab: {fileID: 6094272382243351409, guid: f21df208d83d9174db8a8bfe07a666a0, type: 3}
   deathClawSpawnPoint: {fileID: 2931368546545593751}
   deathClawDuration: 1
+  regenStartDelay: 5
+  regenInterval: 2
+  regenAmount: 1
+  showAIDebug: 1
 --- !u!61 &7426744849909588330
 BoxCollider2D:
   m_ObjectHideFlags: 0
