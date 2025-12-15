@@ -12,6 +12,7 @@ TagManager:
   - Item
   - Skill
   - SpawnPoint
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Enemy
   - Item
   - Skill
-  - 
+  - Ladder
   - 
   - 
   - 
@@ -75,6 +76,9 @@ TagManager:
     locked: 0
   - name: Chest
     uniqueID: 1151316305
+    locked: 0
+  - name: Ladder
+    uniqueID: 366165285
     locked: 0
   - name: Player
     uniqueID: 1415540899

@@ -90,10 +90,18 @@ public class CheckpointManager : MonoBehaviour
             {
                 string currentScene = SceneManager.GetActiveScene().name;
 
-                // ✅ FIX: Kiểm tra xem có cần load scene khác không
-                if (saveData.lastSceneName != currentScene)
+                // ✅ DEBUG: Log để kiểm tra
+                Debug.Log($"🔍 Current Scene: '{currentScene}'");
+                Debug.Log($"🔍 Save Scene: '{saveData.lastSceneName}'");
+                Debug.Log($"🔍 Are they equal? {saveData.lastSceneName == currentScene}");
+
+                // ✅ FIX: So sánh chặt chẽ và trim whitespace
+                if (!string.IsNullOrEmpty(saveData.lastSceneName) &&
+                    saveData.lastSceneName.Trim() != currentScene.Trim())
                 {
                     // Nếu checkpoint ở scene khác -> load scene đó
+                    Debug.Log($"🌍 Respawn requires scene change: {currentScene} → {saveData.lastSceneName}");
+
                     if (LoadingManager.Instance != null)
                     {
                         LoadingManager.Instance.LoadMapFromSave(saveData, currentScene);
@@ -102,7 +110,7 @@ public class CheckpointManager : MonoBehaviour
                 else
                 {
                     // ✅ Nếu cùng scene -> CHỈ RESET PLAYER, KHÔNG RELOAD SCENE
-                    Debug.Log("♻️ Respawning in same scene - Resetting player state...");
+                    Debug.Log("♻️ Respawning in same scene - Resetting player state WITHOUT reloading scene");
 
                     // Reset player position
                     player.transform.position = new Vector3(saveData.playerPosX, saveData.playerPosY, player.transform.position.z);
@@ -144,10 +152,37 @@ public class CheckpointManager : MonoBehaviour
         // ✅ Enable movement
         player.EnableMovement();
 
-        // Reset scene (respawn enemies, reset chests...)
-        if (LoadingManager.Instance != null)
+        // ✅ FIX: KHÔNG reload scene nếu đã ở default scene
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        Debug.Log($"🔍 SpawnAtDefault - Current: '{currentScene}', Default: '{defaultSpawnScene}'");
+
+        if (!string.IsNullOrEmpty(defaultSpawnScene) &&
+            defaultSpawnScene.Trim() != currentScene.Trim())
         {
-            LoadingManager.Instance.LoadMap(defaultSpawnScene, "default");
+            // Chỉ load scene khác nếu cần thiết
+            Debug.Log($"🌍 Need to load default scene: {currentScene} → {defaultSpawnScene}");
+
+            if (LoadingManager.Instance != null)
+            {
+                LoadingManager.Instance.LoadMap(defaultSpawnScene, "default");
+            }
+        }
+        else
+        {
+            Debug.Log("✅ Already in default scene - No need to reload");
+
+            // ✅ TODO: Reset scene state nếu cần (hiện tại không cần vì sẽ load lại từ save)
+            // Reset scene state (respawn enemies, reset chests) WITHOUT reloading
+            // if (EnemyManager.Instance != null)
+            // {
+            //     EnemyManager.Instance.ResetAllEnemies();
+            // }
+
+            // if (ChestManager.Instance != null)
+            // {
+            //     ChestManager.Instance.ResetAllChests();
+            // }
         }
 
         Debug.Log($"✅ Player respawned at default: {defaultSpawnPosition}");
@@ -177,7 +212,7 @@ public class CheckpointManager : MonoBehaviour
     /// <summary>
     /// Clear all checkpoint data (khi start new game)
     /// </summary>
-    public void ClearAllCheckpoints()
+    public void ResetCheckpoints()
     {
         currentCheckpointID = null;
         currentCheckpointPosition = Vector3.zero;
@@ -185,6 +220,14 @@ public class CheckpointManager : MonoBehaviour
         activatedCheckpoints.Clear();
 
         Debug.Log("🗑️ All checkpoints cleared");
+    }
+
+    /// <summary>
+    /// [DEPRECATED] Dùng ResetCheckpoints() thay thế
+    /// </summary>
+    public void ClearAllCheckpoints()
+    {
+        ResetCheckpoints();
     }
 
     /// <summary>

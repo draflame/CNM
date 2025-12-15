@@ -56,6 +56,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -77,6 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1707544633
   m_SortingLayer: 7
   m_SortingOrder: 0
@@ -125,6 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b8ae57dfdae81498137a7175f06dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 
+  enemyType: Enemy
   health: 1
   speed: 3
   distanceMoving: 3
@@ -137,6 +142,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   boxCollider: {fileID: 4713535007532960489}
+  audioSource: {fileID: 0}
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 0}
+  idleClip: {fileID: 0}
+  playerSoundRange: 5
+  stepDistance: 0.5
+  dropItems: []
+  dropForce: 3
+  dropSpread: 1
   flightSpeed: 10
   detectionRadius: 9.05
   eyeBallPrefab: {fileID: 7027307719616268714, guid: af90a49e994575a43bd2ebd8871f8193, type: 3}
@@ -195,7 +209,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3942140646837487811}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
