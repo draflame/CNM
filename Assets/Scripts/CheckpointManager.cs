@@ -61,14 +61,6 @@ public class CheckpointManager : MonoBehaviour
             Debug.LogWarning("⚠️ SaveGameManager not found!");
         }
 
-        // 🩹 HỒI MÁU VÀ STAMINA ĐẦY
-        knight player = FindObjectOfType<knight>();
-        if (player != null)
-        {
-            player.RestoreHealthAndStamina();
-            Debug.Log("💚 Player health and stamina restored");
-        }
-
         // Visual feedback
         ShowCheckpointActivatedMessage(checkpointID);
     }
@@ -93,19 +85,39 @@ public class CheckpointManager : MonoBehaviour
             // 🔄 LOAD LẠI TỪ CHECKPOINT CUỐI
             Debug.Log("🔄 Loading from last checkpoint...");
 
-            // Load game sẽ restore position, health, stamina, inventory, enemies
-            if (LoadingManager.Instance != null)
+            GameData saveData = SaveGameManager.Instance.LoadGameData();
+            if (saveData != null)
             {
-                GameData saveData = SaveGameManager.Instance.LoadGameData();
-                if (saveData != null)
+                string currentScene = SceneManager.GetActiveScene().name;
+
+                // ✅ FIX: Kiểm tra xem có cần load scene khác không
+                if (saveData.lastSceneName != currentScene)
                 {
-                    LoadingManager.Instance.LoadMapFromSave(saveData, SceneManager.GetActiveScene().name);
+                    // Nếu checkpoint ở scene khác -> load scene đó
+                    if (LoadingManager.Instance != null)
+                    {
+                        LoadingManager.Instance.LoadMapFromSave(saveData, currentScene);
+                    }
                 }
-            }
-            else
-            {
-                Debug.LogError("❌ LoadingManager not found!");
-                SpawnAtDefault(player);
+                else
+                {
+                    // ✅ Nếu cùng scene -> CHỈ RESET PLAYER, KHÔNG RELOAD SCENE
+                    Debug.Log("♻️ Respawning in same scene - Resetting player state...");
+
+                    // Reset player position
+                    player.transform.position = new Vector3(saveData.playerPosX, saveData.playerPosY, player.transform.position.z);
+
+                    // Apply saved data (health, stamina, inventory, enemies)
+                    if (SaveGameManager.Instance != null)
+                    {
+                        SaveGameManager.Instance.ApplyLoadedData(player, saveData);
+                    }
+
+                    // ✅ FIX: Enable movement sau khi respawn
+                    player.EnableMovement();
+
+                    Debug.Log("✅ Player respawned at checkpoint in same scene");
+                }
             }
         }
         else
@@ -128,6 +140,9 @@ public class CheckpointManager : MonoBehaviour
 
         // Reset health và stamina về mức cơ bản
         player.RestoreHealthAndStamina();
+
+        // ✅ Enable movement
+        player.EnableMovement();
 
         // Reset scene (respawn enemies, reset chests...)
         if (LoadingManager.Instance != null)

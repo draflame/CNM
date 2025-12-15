@@ -5468,7 +5468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dac956d2711164b8a7adee968bcd74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckpointManager
-  defaultSpawnPosition: {x: 0, y: 0, z: 0}
+  defaultSpawnPosition: {x: 0.3, y: 3.54, z: 0}
   defaultSpawnScene: RuinedCastle
 --- !u!1 &1002750849
 GameObject:

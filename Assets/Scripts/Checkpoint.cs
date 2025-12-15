@@ -9,27 +9,27 @@ public class Checkpoint : MonoBehaviour
     [Header("Checkpoint Settings")]
     [SerializeField] private string checkpointID = ""; // ID duy nhất của checkpoint
     [SerializeField] private bool isActivated = false; // Đã kích hoạt chưa
-    
+
     [Header("World-Space Interaction UI")]
     [SerializeField] private GameObject worldUI; // UI hiển thị "Press E"
-    
+
     [Header("Visual Feedback")]
     [SerializeField] private GameObject activatedEffect; // Effect khi đã activate (optional)
     [SerializeField] private ParticleSystem activateParticle; // Particle khi activate
-    
+
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip activateClip;
-    
+
     private Animator animator;
     private bool playerInRange = false;
     private SpriteRenderer spriteRenderer;
-    
+
     void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+
         // Auto-generate ID nếu chưa có
         if (string.IsNullOrEmpty(checkpointID))
         {
@@ -37,10 +37,10 @@ public class Checkpoint : MonoBehaviour
             checkpointID = $"{sceneName}_Checkpoint_{transform.position.x:F1}_{transform.position.y:F1}";
             Debug.Log($"🆔 Auto-generated checkpoint ID: {checkpointID}");
         }
-        
+
         if (worldUI != null)
             worldUI.SetActive(false);
-        
+
         // Check xem checkpoint này đã được activate chưa
         if (CheckpointManager.Instance != null)
         {
@@ -48,7 +48,7 @@ public class Checkpoint : MonoBehaviour
             UpdateVisuals();
         }
     }
-    
+
     void Update()
     {
         // Chỉ cho phép interact nếu chưa activate hoặc muốn save lại
@@ -56,14 +56,14 @@ public class Checkpoint : MonoBehaviour
         {
             ActivateCheckpoint();
         }
-        
+
         // UI luôn hướng về Camera (2D)
         if (worldUI != null && worldUI.activeSelf)
         {
             worldUI.transform.rotation = Quaternion.identity;
         }
     }
-    
+
     private void ActivateCheckpoint()
     {
         if (CheckpointManager.Instance == null)
@@ -71,41 +71,76 @@ public class Checkpoint : MonoBehaviour
             Debug.LogError("❌ CheckpointManager not found!");
             return;
         }
-        
+
         // Kích hoạt checkpoint
         CheckpointManager.Instance.ActivateCheckpoint(checkpointID, transform.position);
         isActivated = true;
-        
-        // Visual feedback
-        UpdateVisuals();
-        
+
+        // 💚 NHẤP NHÁY MÀU XANH 2-3 LẦN
+        StartCoroutine(FlashGreenEffect());
+
         // Play animation
         if (animator != null)
         {
             animator.SetTrigger("Activate");
         }
-        
+
         // Play particle effect
         if (activateParticle != null)
         {
             activateParticle.Play();
         }
-        
+
         // Play sound
         if (audioSource != null && activateClip != null)
         {
             audioSource.PlayOneShot(activateClip);
         }
-        
+
         // Ẩn UI
         if (worldUI != null)
         {
             worldUI.SetActive(false);
         }
-        
+
         Debug.Log($"✅ Checkpoint activated: {checkpointID}");
     }
-    
+
+    /// <summary>
+    /// Hiệu ứng nhấp nháy màu xanh 2-3 lần
+    /// </summary>
+    private System.Collections.IEnumerator FlashGreenEffect()
+    {
+        if (spriteRenderer == null)
+        {
+            Debug.LogWarning("⚠️ SpriteRenderer not found for flash effect");
+            yield break;
+        }
+
+        Color originalColor = spriteRenderer.color;
+        Color greenColor = new Color(0.3f, 1f, 0.3f, 1f); // Màu xanh sáng
+
+        int flashCount = 3; // Nhấp nháy 3 lần
+        float flashDuration = 0.15f; // Mỗi lần 0.15s
+
+        for (int i = 0; i < flashCount; i++)
+        {
+            // Chuyển sang màu xanh
+            spriteRenderer.color = greenColor;
+            yield return new WaitForSeconds(flashDuration);
+
+            // Quay lại màu gốc
+            spriteRenderer.color = originalColor;
+            yield return new WaitForSeconds(flashDuration);
+        }
+
+        // Giữ màu xanh nhạt cuối cùng khi đã activate
+        if (isActivated)
+        {
+            spriteRenderer.color = new Color(0.7f, 1f, 0.7f, 1f); // Màu xanh nhạt
+        }
+    }
+
     private void UpdateVisuals()
     {
         // Thay đổi visual khi đã activate (optional)
@@ -113,20 +148,20 @@ public class Checkpoint : MonoBehaviour
         {
             activatedEffect.SetActive(isActivated);
         }
-        
+
         // Thay đổi màu sprite (optional)
         if (spriteRenderer != null && isActivated)
         {
             spriteRenderer.color = new Color(0.5f, 1f, 0.5f, 1f); // Màu xanh nhạt
         }
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            
+
             // Hiển thị UI (luôn hiển thị, cho phép save lại)
             if (worldUI != null)
             {
@@ -134,26 +169,26 @@ public class Checkpoint : MonoBehaviour
             }
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            
+
             if (worldUI != null)
             {
                 worldUI.SetActive(false);
             }
         }
     }
-    
+
     // Public getter
     public string GetCheckpointID()
     {
         return checkpointID;
     }
-    
+
     public bool IsActivated()
     {
         return isActivated;
