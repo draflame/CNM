@@ -5384,7 +5384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equippedSkillSet: {fileID: 0}
   SkillPanel: {fileID: 1960539989}
-  player: {fileID: 0}
+  player: {fileID: 7549035618029892507, guid: 9eff5293e3f892d49a8d109d6894a505, type: 3}
   skillEquipmentSlot: {fileID: 1565789183}
 --- !u!114 &997694141
 MonoBehaviour:
