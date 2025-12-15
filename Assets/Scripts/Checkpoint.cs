@@ -149,11 +149,11 @@ public class Checkpoint : MonoBehaviour
             activatedEffect.SetActive(isActivated);
         }
 
-        // Thay đổi màu sprite (optional)
-        if (spriteRenderer != null && isActivated)
-        {
-            spriteRenderer.color = new Color(0.5f, 1f, 0.5f, 1f); // Màu xanh nhạt
-        }
+        // // Thay đổi màu sprite (optional)
+        // if (spriteRenderer != null && isActivated)
+        // {
+        //     spriteRenderer.color = new Color(0.5f, 1f, 0.5f, 1f); // Màu xanh nhạt
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
