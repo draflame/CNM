@@ -142,6 +142,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   boxCollider: {fileID: 4713535007532960489}
+  aggroRange: 5
+  deAggroRange: 8
+  chaseSpeed: 3
+  maxChaseDistance: 10
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  edgeCheckDistance: 10
+  edgeCheckOffset: {x: 0.5, y: -0.5}
   audioSource: {fileID: 0}
   hurtClip: {fileID: 0}
   deathClip: {fileID: 0}

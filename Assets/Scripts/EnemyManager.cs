@@ -109,6 +109,12 @@ public class EnemyManager : MonoBehaviour
         {
             enemiesByScene[sceneName].Remove(enemy);
         }
+        //kiem tra enemy da chet co phai la BringerOfDeath khong
+        if (enemy.GetEnemyType() == "BringerOfDeath")
+        {
+            //thong bao cho GameManager biet BringerOfDeath da chet
+            GameManager.Instance.OnBringerOfDeathDefeated();
+        }
     }
 
     /// <summary>

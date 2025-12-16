@@ -164,6 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a15034efaf36d479c56ac0d224c97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 
+  enemyType: BringerOfDeath
   health: 20
   speed: 2
   distanceMoving: 14.7
@@ -171,17 +173,29 @@ MonoBehaviour:
   attackCooldown: 2
   attackDuration: 0.5
   range: 24.36
-  colliderDistance: 0
+  colliderDistance: 0.03
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
   boxCollider: {fileID: 7426744849909588330}
+  aggroRange: 5
+  deAggroRange: 8
+  chaseSpeed: 3
+  maxChaseDistance: 10
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  edgeCheckDistance: 1.45
+  edgeCheckOffset: {x: 0.72, y: -0.5}
   audioSource: {fileID: 5141500175916222171}
   hurtClip: {fileID: 8300000, guid: f7831babffe38374c903160bfffd66a1, type: 3}
   deathClip: {fileID: 0}
   idleClip: {fileID: 0}
   playerSoundRange: 6.07
   stepDistance: 0.5
+  dropItems: []
+  dropForce: 3
+  dropSpread: 1
   chaseRange: 10.5
   attackRange: 2
   stopDistance: 1.2
@@ -270,7 +284,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6867000035397004636
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -41,13 +41,13 @@ public class PlayerAttack : MonoBehaviour
         {
             return;
         }
-        if(player.GetStamina() < staminaCost)
+        if (player.GetStamina() < staminaCost)
         {
             Debug.Log("Not enough stamina to attack");
             return;
         }
         isAttacking = true;
-        player.SetStamina(player.GetStamina() - staminaCost); 
+        player.SetStamina(player.GetStamina() - staminaCost);
         cooldownTimer = 0f;
         animator.SetBool("isAttacking", true);
 
@@ -72,18 +72,21 @@ public class PlayerAttack : MonoBehaviour
 
     private Enemy GetEnemyInAttackZone()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(
-            boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-            new Vector3(boxCollider.bounds.size.x + range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
-            0, Vector2.left, 0, enemyLayer);
+        // ✅ FIX: OverlapBox cần half-extents (size/2), không phải full size
+        Vector2 attackCenter = boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance;
+        Vector2 attackHalfExtents = new Vector2((boxCollider.bounds.size.x + range) / 2f, boxCollider.bounds.size.y / 2f);
 
-        if (hit.collider != null)
+        Collider2D hit = Physics2D.OverlapBox(attackCenter, attackHalfExtents, 0, enemyLayer);
+
+        if (hit != null)
         {
-            return hit.collider.GetComponent<Enemy>();
+            Debug.Log($"✅ Hit enemy: {hit.gameObject.name}");
+            return hit.GetComponent<Enemy>();
         }
+
+        Debug.Log("❌ No enemy in attack zone");
         return null;
     }
-
     private void OnDrawGizmos()
     {
         if (boxCollider == null) return;

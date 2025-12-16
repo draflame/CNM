@@ -186,6 +186,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -207,6 +209,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1707544633
   m_SortingLayer: 7
   m_SortingOrder: 0
@@ -328,21 +331,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2616226e8ea530498695da682a037ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 
+  enemyType: Enemy
   health: 4
   speed: 2
-  distanceMoving: 5
+  distanceMoving: 7
   damage: 10
   attackCooldown: 1
   attackDuration: 0.5
-  range: 2.12
+  range: 2.18
   colliderDistance: 0.33
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
   boxCollider: {fileID: 4671058059716157291}
+  aggroRange: 5
+  deAggroRange: 8
+  chaseSpeed: 3
+  maxChaseDistance: 10
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  edgeCheckDistance: 1.01
+  edgeCheckOffset: {x: 0.86, y: -0.5}
   audioSource: {fileID: 7109253434481431216}
   hurtClip: {fileID: 8300000, guid: 8aa4b4641f3566043a0fb1ead2d7895c, type: 3}
   deathClip: {fileID: 8300000, guid: 095191b83ae350440b6f145a035c7ca6, type: 3}
   idleClip: {fileID: 8300000, guid: 44609440a9bfca749a354c5e24b36a60, type: 3}
   playerSoundRange: 10
   stepDistance: 1
+  dropItems: []
+  dropForce: 3
+  dropSpread: 1
